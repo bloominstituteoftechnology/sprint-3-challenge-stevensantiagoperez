@@ -253,13 +253,23 @@
           return "No ants here. Did you work them to death?";
         }
 
+        let antsCount = this.ants.length;
+
         this.ants.forEach(ant => {
           ant.health -= 20;
         });
 
         this.ants = this.ants.filter(ant => ant.health > 0);
 
-        return `${this.ants.length} ants starting work!`;
+        let startingWorkCount = antsCount - this.ants.length;
+
+        if (startingWorkCount > 0) {
+          return `${antsCount} ants starting work!`;
+        } else {
+          return "No ants here. Did you work them to death?";
+        }
+
+        
       }
 
 
