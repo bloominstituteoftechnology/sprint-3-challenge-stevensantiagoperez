@@ -90,6 +90,15 @@
         return this.ints
       }
 
+      getEveryNth (int) {
+        let result = [];
+
+        for (let i = 0; i < this.ints.length; i+=int) {
+          result.push(this.ints[i])
+        }
+        return result
+      }
+
     }
 
     // 👉 CHALLENGE 2 NerfGun
