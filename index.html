@@ -99,6 +99,15 @@
         return result
       }
 
+
+      getAllReversed () {
+        let result = []
+        for (let i = this.ints.length - 1; i >= 0; i--) {
+          result.push(this.ints[i])
+        }
+        return result
+      }
+
     }
 
     // 👉 CHALLENGE 2 NerfGun
