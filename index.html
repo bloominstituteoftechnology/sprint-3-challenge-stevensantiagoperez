@@ -243,32 +243,32 @@
 
       constructor (...antNames) {
         this.ants = antNames.map(name => ({
-          name, health: 100
-        }))
+          name, 
+          health: 100
+        }));
       }
 
-      work () {
-        if(this.ants.length === 0) {
-          return "No ants here. Did you work them to death?"
+      work() {
+        if (this.ants.length === 0) {
+          return "No ants here. Did you work them to death?";
         }
 
         this.ants.forEach(ant => {
-          ant.health -= 20
-          if (ant.health <= 0) {
-            this.ants = this.ants.filter(a => a !== ant)
-          }
-        })
+          ant.health -= 20;
+        });
 
+        this.ants = this.ants.filter(ant => ant.health > 0);
 
-        return `${this.ants.length} ants starting work!`
+        return `${this.ants.length} ants starting work!`;
       }
+
 
 
       feed (name) {
         const findAnt = this.ants.find(ant => ant.name === name)
 
         if (findAnt) {
-          findAnt.health += 15
+          findAnt.health += 15;
           return "Yum!"
         } else {
           return `${name} not found!`
