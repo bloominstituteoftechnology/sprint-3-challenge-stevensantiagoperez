@@ -265,10 +265,12 @@
 
 
       feed (name) {
-        const findAnt = this.ants.find(ant => ant.name === name)
+        let foundAnts = this.ants.filter(ant => ant.name === name);
 
-        if (findAnt) {
-          findAnt.health += 15;
+        if (foundAnts.length > 0) {
+          foundAnts.forEach(ant => {
+            ant.health += 15;
+          })
           return "Yum!"
         } else {
           return `${name} not found!`
