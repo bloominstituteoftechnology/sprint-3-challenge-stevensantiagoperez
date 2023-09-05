@@ -126,6 +126,23 @@
       //      * When disengaging the safety, return "Safety disabled!"
       // 🌟 HINT: instances need to keep track of their maximum capacity as well as their current capacity
 
+      constructor(numOfProjectiles) {
+        this.darts = numOfProjectiles;
+        this.safety = true;
+      }
+
+
+
+      shoot () {
+        if (this.darts > 0 && !this.safety) {
+          this.darts--
+          return 'Bang!'
+          console.log(this.darts)
+        } else {
+          return "Click!"
+        }
+      }
+
     }
 
     // 👉 CHALLENGE 3 EBook
